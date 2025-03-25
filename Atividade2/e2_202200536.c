@@ -7,7 +7,7 @@
 int main(){
 	pid_t p = fork();
 
-	if(p > 0){
+	if(p > 0) {
 		int nps, i = 0;
 
 		printf("Numero de processos: ");
@@ -15,7 +15,7 @@ int main(){
 
 		printf("Pai de todos: %d\n", getpid());
 
-		for(i; i < nps && p > 0; i++) p = fork();
+		for(i; i < nps && p > 0; i++, p = fork());
 
 		if (p > 0) wait(NULL);
 		else if(p == 0) printf("Filho %d: %d, Pai: %d\n", i, getpid(), getppid());
